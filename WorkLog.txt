@@ -1,0 +1,10 @@
+Software ----------------------------------
+
+VS Code
+
+NodeJS manager
+
+Brackets
+
+Npm react native
+
