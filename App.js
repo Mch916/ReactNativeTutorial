@@ -1,11 +1,31 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TextInput, View, Image } from 'react-native';
 
-export default class App extends React.Component {
+class Greeting extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>TEST</Text>
+      <Text>Hello {this.props.name}!</Text>
+    );
+  }
+}
+
+export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {text: ''};
+  }
+
+  render() {
+    return (
+      <View style={{padding: 10}}>
+        <TextInput
+          style={{height: 40}}
+          placeholder="Type here to translate!"
+          onChangeText={(text) => this.setState({text})}
+        />
+        <Text style={{padding: 10, fontSize: 42, backgroundColor: 'red'}}>
+          {this.state.text.split(' ').map((word) => word && 'why').join(' ')}
+        </Text>
       </View>
     );
   }
